@@ -8,7 +8,7 @@ on:
     - cron:  '0 11 * * *'
 
 jobs:
-  suite-tests:
+  cypress-tests:
     runs-on: ubuntu-latest
     steps:
       - name: Test
