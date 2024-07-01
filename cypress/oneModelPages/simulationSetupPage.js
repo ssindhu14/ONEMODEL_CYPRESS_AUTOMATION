@@ -11,7 +11,7 @@ class simulationSetupPage{
 
     elements={
 
-        headerText: ()=> cy.get('.cds--content _content_1q1ah_285'),
+        headerText: ()=> cy.get('main h1'),
         stateSelectionButton: ()=> cy.get('._nextOrPreviousButton_1q1ah_326')
     }
 
