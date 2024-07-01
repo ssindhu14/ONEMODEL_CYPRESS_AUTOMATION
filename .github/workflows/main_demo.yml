@@ -1,8 +1,17 @@
-name: E2E on Chrome
-on: [push]
+name: example-cron
+on:
+  schedule:
+    - cron: '0 11 * * *'
+  workflow_dispatch:
+
 jobs:
-  install:
-    runs-on: ubuntu-latest
+  nightly:
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+
+      - name: Cypress nightly tests 🌃
+        uses: ./
+        with:
+          working-directory: cypress
