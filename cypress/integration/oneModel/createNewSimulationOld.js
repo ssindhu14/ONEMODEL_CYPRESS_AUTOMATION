@@ -12,6 +12,7 @@ describe('oneModel', function () {
                 cy.get("input[type='password']").type('MagMutual2024');
                 cy.get("button[type='submit']").click();
            })*/
+          //////
         cy.get('[data-testid="screen-title"]').should('contain.text','Dashboard');
         cy.get("button[data-testid='new-simulation-button']").click();
         cy.get('#title-input').type('Test');
