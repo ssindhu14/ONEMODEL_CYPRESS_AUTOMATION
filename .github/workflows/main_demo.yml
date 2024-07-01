@@ -11,7 +11,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Cypress nightly tests 🌃
-        uses: ./
-        with:
-          working-directory: cypress
+    
