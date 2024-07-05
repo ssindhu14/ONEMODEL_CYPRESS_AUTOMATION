@@ -1,4 +1,4 @@
-name: onemodel cypress automation run
+name: onemodel cypress automation 
 on:
   push:
       branches: [ master ]
