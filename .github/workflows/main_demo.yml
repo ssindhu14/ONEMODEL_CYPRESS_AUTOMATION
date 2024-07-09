@@ -21,6 +21,38 @@ jobs:
           steps: ${{ toJson(steps)}}
           channel: '#github_workflows'
           if: always()
+     - name: Checkout
+       uses: actions/checkout@v4
+     - name: Setup Node
+       uses: actions/setup-node@v4
+       with:
+          # Action runs: using: node20 as defined in
+          # https://github.com/cypress-io/github-action/blob/master/action.yml
+          # Node.js minor version is aligned to
+          # https://github.com/actions/runner/blob/main/src/Misc/externals.sh
+          node-version: 20.8.1
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      # https://github.com/cypress-io/github-action
+     - name: Cypress run
+       uses: cypress-io/github-action@v6
+      # after the test run completes
+      # store videos and any screenshots
+      # NOTE: screenshots will be generated only if E2E test failed
+      # thus we store screenshots only on failures
+      # Alternative: create and commit an empty cypress/screenshots folder
+      # to always have something to upload
+     - uses: actions/upload-artifact@v4
+       if: failure()
+       with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+      # Test run video was always captured, so this action uses "always()" condition
+     - uses: actions/upload-artifact@v4
+       if: always()
+       with:
+          name: cypress-videos
+          path: cypress/videos
 
        
       
