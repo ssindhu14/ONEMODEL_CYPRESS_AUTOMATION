@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
        SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
+       SLACK_WEBHOOK_TYPE: ${{INCOMING_WEBHOOK}}
     steps:
       - name: checkout
         uses: actions/checkout@v4
@@ -36,7 +37,7 @@ jobs:
           path: cypress/videos
           
       - name: Slack Notification
-        uses: act10ns/slack@v2
+        uses: slackapi/slack-github-actions@v1.26.0
         with:  
           status: ${{ job.status}}
           steps: ${{ toJson(steps)}}
