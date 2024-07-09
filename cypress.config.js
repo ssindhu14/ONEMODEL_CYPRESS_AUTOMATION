@@ -7,10 +7,10 @@ module.exports = defineConfig({
   defaultCommandTimeout: 10000,
   video:true,
     
-    // retries:{
-    //   runMode:1,
-    //   openMode:2
-    // } 
+    retries:{
+      runMode:1,
+      openMode:2
+    } ,
     reporterOptions: {
       charts: true,
       reportPageTitle: 'custom-title',

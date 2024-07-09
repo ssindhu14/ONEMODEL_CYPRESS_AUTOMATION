@@ -16,47 +16,45 @@ describe('oneModel', function () {
 
 it("Should Create New Simulation", () =>{
    
-    dashBoardPage.elements.headerText().should('contain.text','Dashboard');
+       dashBoardPage.elements.headerText().should('contain','Dashboard');
     
-    dashBoardPage.createNewSimulation();
+       dashBoardPage.createNewSimulation();
 
-    //simulationSetupPage.elements.headerText().should('contain.text','Simulation Setup');
+       simulationSetupPage.elements.headerText().should('contain','Simulation Setup');
 
-    simulationSetupPage.simulationSetup();
+       simulationSetupPage.simulationSetup();
 
-    stateSelectionPage.elements.headerText().should('contain.text','State Selection');
+       stateSelectionPage.elements.headerText().should('contain','State Selection');
 
-    stateSelectionPage.stateSelection();
+       stateSelectionPage.stateSelection();
 
-   // stateSetupPage.elements.headerText().should('contain.text','State Setup');
+       stateSetupPage.elements.headerText().should('contain','State Setup');
 
-    stateSetupPage.stateSetup();
+       stateSetupPage.stateSetup();
 
-    simulationWalkthroughPage.elements.headerText().should('contain.text','Simulation Walkthrough');
+       simulationWalkthroughPage.elements.headerText().should('contain','Simulation Walkthrough');
 
-    cy.wait(5000);
+       simulationWalkthroughPage.simulationWalkthrough();
 
-    simulationWalkthroughPage.simulationWalkthrough();
+       currentCoveragePage.elements.headerText().should('contain','Current Coverage Configuration');
 
-   // currentCoveragePage.elements.headerText().should('contain.text','Current Coverage Configuration');
+       currentCoveragePage.currentCoverage();
 
-    currentCoveragePage.currentCoverage();
+       currentSimulationPage.elements.headerText().should('contain','Current Coverage Simulation');
 
-   // currentSimulationPage.elements.headerText().should('contain.text','Current Coverage Simulation');
+       currentSimulationPage.currentSimulation();
 
-    currentSimulationPage.currentSimulation();
-
-   // futureCoveragePage.elements.headerText().should('contain.text','Future Coverage Configuration');
+       futureCoveragePage.elements.headerText().should('contain','Future Coverage Configuration');
     
-    futureCoveragePage.futureCoverage();
+       futureCoveragePage.futureCoverage();
 
-   // futureSimulationPage.elements.headerText().should('contain.text','Future Coverage Simulation | Optimal');
+       futureSimulationPage.elements.headerText().should('contain','Future Coverage Simulation | Optimal');
 
-    futureSimulationPage.futureSimulation();
+       futureSimulationPage.futureSimulation();
 
-   // comparisonPage.elements.headerText().should('contain.text','Comparison | Optimal');
+       comparisonPage.elements.headerText().should('contain','Comparison | Optimal');
 
-    comparisonPage.comparison();
+       comparisonPage.comparison();
 
     })
 })

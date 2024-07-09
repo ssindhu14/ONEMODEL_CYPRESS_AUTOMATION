@@ -23,7 +23,7 @@ class futureCoveragePage{
     }
 
 futureCoverage(){
-
+    cy.wait(10000)
     this.elements.confirmButton().contains('Confirm').click();
     this.elements.futureSimulation().click();
   }

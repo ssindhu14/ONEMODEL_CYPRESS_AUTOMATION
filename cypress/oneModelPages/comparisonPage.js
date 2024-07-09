@@ -14,14 +14,15 @@ class comparisonPage{
     
     elements={
 
-        headerText: ()=> cy.get('_heading_u6s6f_29'),
+        headerText: ()=> cy.get('._heading_u6s6f_29 > h1'),
         saveAndExit: ()=> cy.get("button[data-testid='save-and-exit-button']"),
         saveAndExitButton: ()=> cy.get('.cds--btn.cds--btn--primary')
         
     }
 
        comparison(){
-
+           
+           cy.wait(2000);
            this.elements.saveAndExit().click();
            this.elements.saveAndExitButton().contains('Save & Exit').click();
   }

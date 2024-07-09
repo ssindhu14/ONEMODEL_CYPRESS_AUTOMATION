@@ -20,8 +20,10 @@ class currentSimulationPage{
     }
 
 currentSimulation(){
-    
+
+    cy.wait(5000)
     this.elements.playSimulationButton().click();
+    cy.wait(15000)
     this.elements.futureCoverage().click();
   }
 }

@@ -20,7 +20,7 @@ class DashboardPage{
       titleInput : () => cy.get('#title-input'),
       policyHolderInput: () => cy.get('#policyholder-combo-box'),
       dropdownOption:  () => cy.get('#downshift-0-menu .cds--list-box__menu-item__option'),
-      createSimulationButton: () => cy.get('.cds--btn.cds--btn--primary')
+      createSimulationButton: () => cy.get('.cds--modal-footer > .cds--btn--primary')
         
         }
         
@@ -30,8 +30,10 @@ class DashboardPage{
         this.elements.newSimulationButton().click();
         this.elements.titleInput().type('Test');
         this.elements.policyHolderInput().type('OneModel Demo (Prospecting)');
+        cy.wait(10000);
         this.elements.dropdownOption().click();
-        this.elements.createSimulationButton().contains('Create Simulation').click();
+        cy.wait(10000);
+        this.elements.createSimulationButton().eq(0).contains('Create Simulation').click({ force: true });
 
     }
         

@@ -18,7 +18,7 @@ class stateSetupPage{
 
     elements={
 
-        headerText: ()=> cy.get('.cds--content _content_1q1ah_285'),
+        headerText: ()=> cy.get('.cds--content > h1'),
         physicianSelectionButton: ()=> cy.get('._addPracticeButtons_ybw46_79 > :nth-child(2)'),
         physicianTitle: ()=> cy.get('#practice-title'),
         countyInput: ()=> cy.get('#county-input'),
@@ -30,7 +30,7 @@ class stateSetupPage{
     }
 
     stateSetup(){
-
+        cy.wait(2000)
         this.elements.physicianSelectionButton().click();
         this.elements.physicianTitle().click().type('Sindhu');
         this.elements.countyInput().type('Autauga County');

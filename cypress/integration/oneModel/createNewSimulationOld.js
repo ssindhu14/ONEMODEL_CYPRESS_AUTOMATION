@@ -16,10 +16,12 @@ describe('oneModel', function () {
         cy.get('[data-testid="screen-title"]').should('contain.text','Dashboard');
         cy.get("button[data-testid='new-simulation-button']").click();
         cy.get('#title-input').type('Test');
-        cy.get('#policyholder-combo-box').type('OneModel Demo (Prospecting)');
+        cy.get('#policyholder-combo-box').type('Acme Anesthesiology, LLC');
         cy.get('#downshift-0-menu .cds--list-box__menu-item__option').click();
         //cy.get('.cds--modal-footer > .cds--btn--primary').click();
-        cy.get('.cds--btn.cds--btn--primary').contains('Create Simulation').click();
+        cy.wait(10000);
+        cy.get('.cds--modal-footer > .cds--btn--primary').eq(0).contains('Create Simulation').click({ force: true });
+       // cy.wait(5000);
         cy.get('._nextOrPreviousButton_1q1ah_326').click();
         cy.get('button.cds--list-box__field').click();
        /* cy.get('ul.cds--list-box__menu li').each(($el, index) => {

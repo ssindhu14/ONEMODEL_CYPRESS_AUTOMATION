@@ -15,14 +15,16 @@ class futureSimulationPage{
     
     elements={
 
-        headerText: ()=> cy.get('._heading_9fyfh_15'),
+        headerText: ()=> cy.get(':nth-child(1) > h1'),
         playButton: ()=> cy.get("button[class='_initialPlayButton_1c68p_117']"),
-        comparisonButton: ()=> cy.get('a.cds--btn--primary')
+        comparisonButton: ()=> cy.get('.false'),
     }
 
 futureSimulation(){
 
+    cy.wait(10000)
     this.elements.playButton().click();
+    cy.wait(15000)
     this.elements.comparisonButton().click();
   }
 }

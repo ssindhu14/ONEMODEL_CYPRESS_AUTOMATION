@@ -18,7 +18,8 @@ class simulationWalkthroughPage{
 
 
 simulationWalkthrough(){
-    
+
+    cy.wait(5000);  
     this.elements.currentCoverage().click();
   }
 }
