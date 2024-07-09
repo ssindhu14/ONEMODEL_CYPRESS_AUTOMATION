@@ -34,14 +34,13 @@ jobs:
         with:
           name: cypress-videos
           path: cypress/videos
-
-      -name: Slack Notification
-       uses: act10ns/slack@v1
-       with:
-       status: ${{ job.status}}
-       steps: ${{ toJson(steps)}}
-       channel:'#msys-qa'
-       if: always()
+      - name: Slack Notification
+        uses: act10ns/slack@v1
+        with:  
+          status: ${{ job.status}}
+          steps: ${{ toJson(steps)}}
+          channel: '#msys-qa'
+          if: always()
      
   
     
