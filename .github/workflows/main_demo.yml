@@ -16,11 +16,12 @@ jobs:
     steps:
      - name: Slack Notification
        uses: act10ns/slack@v2
+       if: always()
        with:  
           status: ${{ job.status}}
           steps: ${{ toJson(steps)}}
           channel: '#github_workflows'
-          if: always()
+        
      - name: Checkout
        uses: actions/checkout@v4
      - name: Setup Node
