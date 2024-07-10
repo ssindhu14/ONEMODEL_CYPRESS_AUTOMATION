@@ -18,7 +18,8 @@ jobs:
        uses: act10ns/slack@v2
        if: always()
        with:  
-          status: ${{ job.status}}
+          
+          status: ${{ job.status,job.pass,job.failure}}
           steps: ${{ toJson(steps)}}
           channel: '#github_workflows'
         
