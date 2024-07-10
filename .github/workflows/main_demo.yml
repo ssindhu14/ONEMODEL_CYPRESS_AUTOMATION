@@ -19,7 +19,8 @@ jobs:
        if: always()
        with:  
           status: ${{ job.status}}
-          notify_when: 'failure'
+          notify_when: "failure"
+          notification_title: "{workflow} is failing"
           steps: ${{ toJson(steps)}}
           channel: '#github_workflows'
         
